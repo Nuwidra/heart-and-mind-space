@@ -1,11 +1,13 @@
-import { Check, Star, Crown, Calendar, Video, BookOpen, MessageCircle } from "lucide-react";
+import { useState } from "react";
+import { Check, Star, Crown, Calendar, Video, BookOpen, CreditCard } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
+import PaymentModal from "./PaymentModal";
 
 const plans = [
   {
     name: "Básico",
-    price: "₡0000",
+    price: "₡15,000",
     description: "Acceso completo a todo el contenido de la plataforma",
     icon: <BookOpen className="w-6 h-6" />,
     color: "secondary",
@@ -20,7 +22,7 @@ const plans = [
   },
   {
     name: "Medio",
-    price: "₡0000",
+    price: "₡35,000",
     description: "Todo el contenido + acompañamiento profesional",
     icon: <Star className="w-6 h-6" />,
     color: "rose",
@@ -35,7 +37,7 @@ const plans = [
   },
   {
     name: "Premium",
-    price: "₡0000",
+    price: "₡55,000",
     description: "La experiencia completa de bienestar emocional",
     icon: <Crown className="w-6 h-6" />,
     color: "primary",
@@ -70,6 +72,14 @@ const colorClasses = {
 };
 
 const PricingSection = () => {
+  const [selectedPlan, setSelectedPlan] = useState<{ name: string; price: string } | null>(null);
+  const [isPaymentModalOpen, setIsPaymentModalOpen] = useState(false);
+
+  const handleSelectPlan = (plan: { name: string; price: string }) => {
+    setSelectedPlan(plan);
+    setIsPaymentModalOpen(true);
+  };
+
   return (
     <section id="paquetes" className="py-20 md:py-28 bg-background">
       <div className="container mx-auto px-4">
@@ -84,6 +94,16 @@ const PricingSection = () => {
           <p className="text-muted-foreground text-lg">
             Todos los planes incluyen acceso completo a nuestra plataforma de bienestar emocional.
           </p>
+          <div className="mt-4 flex items-center justify-center gap-4 text-sm text-muted-foreground">
+            <div className="flex items-center gap-2">
+              <CreditCard className="w-4 h-4" />
+              <span>Tarjeta</span>
+            </div>
+            <span>•</span>
+            <div className="flex items-center gap-2">
+              <span className="font-bold text-[#0070ba]">PayPal</span>
+            </div>
+          </div>
         </div>
 
         {/* Pricing Cards */}
@@ -126,7 +146,7 @@ const PricingSection = () => {
                 {/* Price */}
                 <div className="mb-6">
                   <span className="text-4xl font-bold text-foreground">{plan.price}</span>
-                  <span className="text-muted-foreground"> / único pago</span>
+                  <span className="text-muted-foreground"> CRC / único pago</span>
                 </div>
 
                 {/* Features */}
@@ -142,8 +162,14 @@ const PricingSection = () => {
                 </ul>
 
                 {/* CTA */}
-                <Button variant={plan.buttonVariant} className="w-full" size="lg">
-                  Comenzar Ahora
+                <Button 
+                  variant={plan.buttonVariant} 
+                  className="w-full" 
+                  size="lg"
+                  onClick={() => handleSelectPlan({ name: plan.name, price: plan.price })}
+                >
+                  <CreditCard className="w-4 h-4 mr-2" />
+                  Comprar Ahora
                 </Button>
               </div>
             );
@@ -167,6 +193,15 @@ const PricingSection = () => {
           </div>
         </div>
       </div>
+
+      {/* Payment Modal */}
+      {selectedPlan && (
+        <PaymentModal
+          isOpen={isPaymentModalOpen}
+          onClose={() => setIsPaymentModalOpen(false)}
+          plan={selectedPlan}
+        />
+      )}
     </section>
   );
 };

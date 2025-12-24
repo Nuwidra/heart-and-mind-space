@@ -1,5 +1,6 @@
 import { FileText, ArrowRight, ClipboardCheck } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { Link } from "react-router-dom";
 
 const SelfHelpSection = () => {
   return (
@@ -29,9 +30,11 @@ const SelfHelpSection = () => {
             <p className="text-muted-foreground mb-6">
               Identifica posibles síntomas de ansiedad y comprende mejor tu estado emocional actual.
             </p>
-            <Button variant="outline" className="w-full group-hover:bg-primary group-hover:text-primary-foreground transition-all">
-              Realizar Test
-              <ArrowRight className="w-4 h-4 ml-2" />
+            <Button asChild variant="outline" className="w-full group-hover:bg-primary group-hover:text-primary-foreground transition-all">
+              <Link to="/test-ansiedad">
+                Realizar Test
+                <ArrowRight className="w-4 h-4 ml-2" />
+              </Link>
             </Button>
           </div>
 
@@ -46,9 +49,11 @@ const SelfHelpSection = () => {
             <p className="text-muted-foreground mb-6">
               Evalúa tu estado de ánimo y obtén orientación sobre pasos a seguir para tu bienestar.
             </p>
-            <Button variant="olive" className="w-full">
-              Realizar Test
-              <ArrowRight className="w-4 h-4 ml-2" />
+            <Button asChild variant="olive" className="w-full">
+              <Link to="/test-depresion">
+                Realizar Test
+                <ArrowRight className="w-4 h-4 ml-2" />
+              </Link>
             </Button>
           </div>
         </div>
