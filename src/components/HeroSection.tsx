@@ -65,14 +65,6 @@ const HeroSection = () => {
             <div className="absolute -bottom-4 -left-4 w-32 h-32 bg-accent/20 rounded-full blur-2xl animate-pulse-soft" style={{ animationDelay: "1s" }} />
           </div>
         </div>
-
-        {/* Scroll indicator */}
-        <div className="absolute bottom-8 left-1/2 -translate-x-1/2 animate-float">
-          <a href="#temas" className="flex flex-col items-center gap-2 text-muted-foreground hover:text-primary transition-colors">
-            <span className="text-sm font-medium">Explorar Temas</span>
-            <ArrowDown className="w-5 h-5" />
-          </a>
-        </div>
       </div>
     </section>
   );
