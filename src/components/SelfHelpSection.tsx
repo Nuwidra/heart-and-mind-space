@@ -30,12 +30,12 @@ const SelfHelpSection = () => {
             <p className="text-muted-foreground mb-6">
               Identifica posibles síntomas de ansiedad y comprende mejor tu estado emocional actual.
             </p>
-            <Button asChild variant="outline" className="w-full group-hover:bg-primary group-hover:text-primary-foreground transition-all">
-              <Link to="/test-ansiedad">
+            <Link to="/test-ansiedad">
+              <Button variant="outline" className="w-full group-hover:bg-primary group-hover:text-primary-foreground transition-all">
                 Realizar Test
                 <ArrowRight className="w-4 h-4 ml-2" />
-              </Link>
-            </Button>
+              </Button>
+            </Link>
           </div>
 
           {/* Depression Test */}
@@ -49,12 +49,12 @@ const SelfHelpSection = () => {
             <p className="text-muted-foreground mb-6">
               Evalúa tu estado de ánimo y obtén orientación sobre pasos a seguir para tu bienestar.
             </p>
-            <Button asChild variant="olive" className="w-full">
-              <Link to="/test-depresion">
+            <Link to="/test-depresion">
+              <Button variant="olive" className="w-full">
                 Realizar Test
                 <ArrowRight className="w-4 h-4 ml-2" />
-              </Link>
-            </Button>
+              </Button>
+            </Link>
           </div>
         </div>
 
