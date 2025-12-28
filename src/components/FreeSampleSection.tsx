@@ -65,10 +65,6 @@ const FreeSampleSection = () => {
               target="_blank"
               rel="noopener noreferrer"
             >
-              <Button variant="accent" size="lg" className="gap-2">
-                <Play className="w-4 h-4" />
-                Ver Video Gratuito
-              </Button>
             </a>
           </div>
         </div>
