@@ -175,25 +175,7 @@ const PricingSection = () => {
             );
           })}
         </div>
-
-        {/* Appointment Buttons */}
-        <div className="mt-16 text-center">
-          <p className="text-muted-foreground mb-6">
-            ¿Prefieres agendar una consulta directamente?
-          </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button variant="accent" size="lg" className="gap-2">
-              <Video className="w-5 h-5" />
-              Cita Virtual
-            </Button>
-            <Button variant="olive" size="lg" className="gap-2">
-              <Calendar className="w-5 h-5" />
-              Cita Presencial
-            </Button>
-          </div>
-        </div>
       </div>
-
       {/* Payment Modal */}
       {selectedPlan && (
         <PaymentModal

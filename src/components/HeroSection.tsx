@@ -1,5 +1,5 @@
 import { Button } from "@/components/ui/button";
-import { Play, Calendar, ArrowDown } from "lucide-react";
+import { Play, Calendar } from "lucide-react";
 
 const HeroSection = () => {
   return (
@@ -28,14 +28,25 @@ const HeroSection = () => {
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
-              <Button variant="hero" className="gap-2">
-                <Play className="w-5 h-5" />
-                Ver Video Introductorio
-              </Button>
-              <Button variant="outline" size="xl" className="gap-2">
-                <Calendar className="w-5 h-5" />
-                Agendar Consulta
-              </Button>
+              {/* Botón que redirige al video */}
+              <a
+                href="https://www.youtube.com/watch?v=sF80I-TQiW0"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <Button variant="hero" className="gap-2">
+                  <Play className="w-5 h-5" />
+                  Ver Video Introductorio
+                </Button>
+              </a>
+
+              {/* Botón que redirige al calendario */}
+              <a href="https://calendar.app.google/rCMQrww7aaGeTGUAA" target="_blank" rel="noopener noreferrer" >
+                <Button variant="outline" size="xl" className="gap-2">
+                  <Calendar className="w-5 h-5" />
+                  Agendar Consulta
+                </Button>
+              </a>
             </div>
 
             {/* Disclaimer */}
@@ -50,9 +61,15 @@ const HeroSection = () => {
           <div className="relative animate-fade-in" style={{ animationDelay: "0.2s" }}>
             <div className="relative aspect-video rounded-2xl overflow-hidden shadow-2xl bg-card border-4 border-secondary/50">
               <div className="absolute inset-0 flex items-center justify-center bg-gradient-to-br from-primary/20 to-rose/20">
-                <button className="w-20 h-20 rounded-full bg-primary text-primary-foreground flex items-center justify-center shadow-xl hover:scale-110 transition-transform duration-300 group">
+                {/* Botón Play que también abre el video */}
+                <a
+                  href="https://www.youtube.com/watch?v=sF80I-TQiW0"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="w-20 h-20 rounded-full bg-primary text-primary-foreground flex items-center justify-center shadow-xl hover:scale-110 transition-transform duration-300 group"
+                >
                   <Play className="w-8 h-8 ml-1 group-hover:scale-110 transition-transform" />
-                </button>
+                </a>
               </div>
               <div className="absolute bottom-4 left-4 right-4 bg-card/90 backdrop-blur-sm rounded-lg p-3">
                 <p className="text-sm font-medium text-foreground">Video Introductorio General</p>

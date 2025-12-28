@@ -39,10 +39,16 @@ const Navbar = () => {
 
           {/* CTA Button */}
           <div className="hidden md:block">
-            <Button variant="warm" className="gap-2">
-              <Calendar className="w-4 h-4" />
-              Agendar Cita
-            </Button>
+            <a
+              href="https://calendar.app.google/rCMQrww7aaGeTGUAA"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <Button variant="warm" className="gap-2">
+                <Calendar className="w-4 h-4" />
+                Agendar Cita
+              </Button>
+            </a>
           </div>
 
           {/* Mobile Menu Button */}
@@ -69,10 +75,16 @@ const Navbar = () => {
                   {link.label}
                 </a>
               ))}
-              <Button variant="warm" className="gap-2 mt-2">
-                <Calendar className="w-4 h-4" />
-                Agendar Cita
-              </Button>
+              <a
+                href="https://calendar.app.google/rCMQrww7aaGeTGUAA"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <Button variant="warm" className="gap-2 mt-2">
+                  <Calendar className="w-4 h-4" />
+                  Agendar Cita
+                </Button>
+              </a>
             </div>
           </div>
         )}

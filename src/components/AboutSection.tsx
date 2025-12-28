@@ -67,10 +67,13 @@ const AboutSection = () => {
               </div>
             </div>
 
-            <Button variant="warm" size="lg" className="gap-2 mt-6">
-              <Calendar className="w-5 h-5" />
-              Agendar Consulta
-            </Button>
+            {/* Botón con enlace */}
+            <a href="https://calendar.app.google/rCMQrww7aaGeTGUAA" target="_blank" rel="noopener noreferrer" >
+              <Button variant="warm" size="lg" className="gap-2 mt-6">
+                <Calendar className="w-5 h-5" />
+                Agendar Consulta
+              </Button>
+            </a>
           </div>
         </div>
       </div>

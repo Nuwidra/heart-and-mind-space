@@ -10,9 +10,15 @@ const FreeSampleSection = () => {
           <div className="relative order-2 lg:order-1 animate-fade-in">
             <div className="relative aspect-video rounded-2xl overflow-hidden shadow-2xl bg-card border-4 border-accent/30">
               <div className="absolute inset-0 flex items-center justify-center bg-gradient-to-br from-accent/20 to-olive/20">
-                <button className="w-20 h-20 rounded-full bg-accent text-accent-foreground flex items-center justify-center shadow-xl hover:scale-110 transition-transform duration-300 group">
+                {/* Botón Play que abre el video */}
+                <a
+                  href="https://www.youtube.com/watch?v=tUlMevt9wfo"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="w-20 h-20 rounded-full bg-accent text-accent-foreground flex items-center justify-center shadow-xl hover:scale-110 transition-transform duration-300 group"
+                >
                   <Play className="w-8 h-8 ml-1 group-hover:scale-110 transition-transform" />
-                </button>
+                </a>
               </div>
             </div>
             
@@ -53,10 +59,17 @@ const FreeSampleSection = () => {
               ))}
             </ul>
 
-            <Button variant="accent" size="lg" className="gap-2">
-              <Play className="w-4 h-4" />
-              Ver Video Gratuito
-            </Button>
+            {/* Botón que abre el video */}
+            <a
+              href="https://www.youtube.com/watch?v=tUlMevt9wfo"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <Button variant="accent" size="lg" className="gap-2">
+                <Play className="w-4 h-4" />
+                Ver Video Gratuito
+              </Button>
+            </a>
           </div>
         </div>
       </div>
